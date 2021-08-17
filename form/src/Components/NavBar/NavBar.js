@@ -3,10 +3,7 @@ import {Link} from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <div>
-            <h1>
-                Form Viewer
-            </h1>
+        <div className='navbar'>
             <Link exact to='/'>
                 <button>Home</button>
             </Link>
