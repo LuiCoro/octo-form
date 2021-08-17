@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+//Theres a cypress test file for this in the form\cypress\integration\SimpleFormTest\simpleForm.spec.js
+
 const initalFormValues = {
     name: '',
     email: '',
@@ -62,7 +64,7 @@ const SimpleForm = () => {
 
                 <br/>
 
-                <button>Submit</button>
+                <button id='simple-submit'>Submit</button>
             </form>
 
             <div>

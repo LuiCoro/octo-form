@@ -10,7 +10,7 @@ const HomePage = () => {
 
             <p>Simple Form</p>
             <Link to='/simple-form'>
-                <button>View Me</button>
+                <button id='simple-form'>View Me</button>
             </Link>
         </div>
     )

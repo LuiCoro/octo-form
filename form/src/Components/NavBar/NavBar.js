@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className='navbar'>
             <Link exact to='/'>
-                <button>Home</button>
+                <button id='homeBTN'>Home</button>
             </Link>
         </div>
     )
