@@ -12,6 +12,11 @@ const HomePage = () => {
             <Link to='/simple-form'>
                 <button id='simple-form'>View Me</button>
             </Link>
+
+            <p>More Inputs</p>
+            <Link to='/inputs'>
+                <button id='inputs'>View Me</button>
+            </Link>
         </div>
     )
 }

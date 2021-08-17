@@ -9,7 +9,10 @@ import NavBar from "./Components/NavBar/NavBar";
 import HomePage from "./Components/HomePage/HomePage";
 
 // Forms Examples To Look At
+//Simple Form
 import SimpleForm from "./Components/SimpleForm/SimpleForm";
+//More Inputs
+import Inputs from "./Components/InputsComponents/InputComponent";
 
 
 const App = () => {
@@ -22,6 +25,9 @@ const App = () => {
             </Route>
             <Route path='/simple-form'>
                 <SimpleForm/>
+            </Route>
+            <Route path='/inputs'>
+                <Inputs />
             </Route>
         </div>
 
