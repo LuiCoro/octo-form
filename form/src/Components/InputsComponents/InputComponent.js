@@ -1,19 +1,67 @@
-import React from 'react'
+import React, {useState} from 'react'
+
+const initalState = {
+    name: '',
+    email: '',
+    skill: '',
+    console: '',
+    favfood: '',
+    password: '',
+}
+const Data = [{
+    name: 'Eric Cartman',
+    email: 'eric.cartman@gmail.com',
+    skill: 'Rage',
+    console: 'PlayStation',
+    favfood: 'Pizza',
+    password: 'earicIsKewl',
+}, {
+    name: 'OMi',
+    email: 'omi@space.com',
+    skill: 'Lazy',
+    console: 'PC',
+    favfood: 'Pizza',
+    password: 'Space18'
+}]
 
 const Inputs = () => {
+    const [userInput, setUserInput] = useState(initalState)
+    const [userList, setUserList] = useState(Data)
+
+    const onChange = (evt) => {
+
+        const {name, value} = evt.target
+
+        setUserInput({...userInput, [name]: value})
+    }
+
+    const onSubmit = (evt) => {
+        evt.preventDefault()
+
+        const newUser = [...userList, userInput]
+        setUserList(newUser)
+
+        setUserInput(initalState)
+    }
+
+    console.log(userInput)
+    console.log(userList)
+
     return (
-        <div>
+        <div onSubmit={onSubmit}>
             <h1>Input Examples!</h1>
             <div>
                 <form>
                     <h2>Text Input</h2>
                     <label>
-                        Name: <input type="text" name="name" placeholder="Enter Your Name"/>
+                        Name: <input type="text" name="name" placeholder="Enter Your Name" onChange={onChange}
+                                     value={userInput.name}/>
                     </label>
 
                     <h2>Email Input</h2>
                     <label>
-                        Email: <input type="email" name="email" placeholder="Enter Your Email"/>
+                        Email: <input type="email" name="email" placeholder="Enter Your Email" onChange={onChange}
+                                      value={userInput.email}/>
                     </label>
 
                     <h2>Select</h2>
@@ -80,6 +128,24 @@ const Inputs = () => {
                     <button id='inputsBTN'>Submit</button>
 
                 </form>
+            </div>
+
+            <div>
+                <h2>User Information</h2>
+                {
+                    userList.map(user => {
+                        return (
+                            <div key={user.email}>
+                                <h2>User Name: {user.name}</h2>
+                                <h3>User Email: {user.email}</h3>
+                                <p>Skill: {user.skill}</p>
+                                <p>Console: {user.console}</p>
+                                <p>Favorite Food: {user.favfood}</p>
+                                <p>Password: {user.password}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )
