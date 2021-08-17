@@ -1,5 +1,11 @@
 import React from 'react';
-import { Route, Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
+
+//NavBar
+import NavBar from "./Components/NavBar/NavBar";
+
+//Home Page
+import HomePage from "./Components/HomePage/HomePage";
 
 // Forms Examples To Look At
 import SimpleForm from "./Components/SimpleForm/SimpleForm";
@@ -8,18 +14,10 @@ import SimpleForm from "./Components/SimpleForm/SimpleForm";
 const App = () => {
     return (
         <div>
-            <h1>
-                Form Viewer
-            </h1>
-            <p>
-                Click on a button to view its example!
-            </p>
-            <Link to="/simple-form">
-                <button>Simple Form</button>
-            </Link>
+            <NavBar/>
 
             <Route exact path='/'>
-                Home Page
+                <HomePage />
             </Route>
             <Route path='/simple-form'>
                 <SimpleForm/>
